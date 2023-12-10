@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,8 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+
+Route::get('/gate',[HomeController::class,'Index'])->name('index.gate');
+//Route::get('/gate/admin',[HomeController::class,'Admin'])->name('index.gate')->middleware('can:isUser');

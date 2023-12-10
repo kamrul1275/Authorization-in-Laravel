@@ -10,6 +10,24 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{ __("You're logged in!") }}
+
+
+
+                    @can('isAdmin')
+                        <h3> here is admin </h3>
+                    @endcan
+
+
+                    @can('isUser')
+                        <h3> here is user </h3>
+                    @endcan
+
+                    @can('isEditor')
+                        <h3> here is editor </h3>
+                    @endcan
+
+
+
                 </div>
             </div>
         </div>
