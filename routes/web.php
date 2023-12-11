@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +34,10 @@ require __DIR__.'/auth.php';
 
 
 
-Route::get('/gate',[HomeController::class,'Index'])->name('index.gate');
+Route::get('/gate',[HomeController::class,'IndexGate'])->name('gate');
 //Route::get('/gate/admin',[HomeController::class,'Admin'])->name('index.gate')->middleware('can:isUser');
+
+
+Route::get('/post',[PostController::class,'IndexPost'])->name('post.index');
+Route::get('post/{post}',[PostController::class,'show'])->name('post.show');
+
