@@ -21,15 +21,16 @@ class PostPolicy
      */
     public function view(User $user, Post $post): bool
     {
-        return $user->id === $post->user_id;
+        return true;
     }
 
     /**
      * Determine whether the user can create models.
      */
-    public function create(User $user): bool
+    public function create(User $user,Post $post ): bool
     {
-        return $user->role == 'user';
+        
+        return $user->id === $post->user_id;
     }
 
     /**
